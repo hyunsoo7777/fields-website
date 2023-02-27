@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+/* 세로 스크롤바 안보이게 하고싶을 시 추가 */
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Swiper - pagination 기본 색깔이 파란색이고 아주 몬생겨서 바꿔줘야됨 */
+.swiper .swiper-pagination {
+  position: absolute;
+  top: 670px !important;
+}
+.swiper .swiper-pagination-bullet {
+  background-color: #cbc9d7;
+  margin: 0 25px !important;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+}
+.swiper .swiper-pagination-bullet-active {
+  background-color: #131432;
 }
