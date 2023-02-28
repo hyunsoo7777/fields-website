@@ -3,11 +3,14 @@ import Title from "../common/Title";
 import Text from "../common/Text";
 import Ipad from "../../assets/ipad.png";
 import Imac from "../../assets/imac.png";
+import FACE from "../../assets/face.jpg";
+import TURN from "../../assets/turn.mp4";
+import TALKING from "../../assets/talking.mp4";
 
 function Tech(props) {
   return (
     <div ref={props.techContainerRef}>
-      <section className="w-full pt-[200px] pb-[250px] bg-background flex flex-col items-center justify-between">
+      <section className="w-screen pt-[200px] pb-[250px] bg-background flex flex-col items-center justify-between">
         <Title
           title="Technology"
           color="text-primary"
@@ -29,9 +32,9 @@ function Tech(props) {
           <div className="w-[320px] h-[320px] rounded-full bg-tech text-center flex justify-center items-center font-semibold text-[50px]">
             3D 게임
           </div>
-          <div className="w-[320px] h-[320px] rounded-full bg-tech text-center flex justify-center items-center font-semibold text-[50px]">
-            VR <br />
-            어플리케이션
+          <div className="w-[320px] h-[320px] rounded-full bg-tech text-center flex flex-col justify-center items-center font-semibold text-[50px]">
+            <div className="relative top-[6px]">VR</div>
+            <div className="relative top-[-6px]">어플리케이션</div>
           </div>
         </div>
         <Text
@@ -53,7 +56,7 @@ function Tech(props) {
           fontWeight="font-regular"
         ></Text>
       </section>
-      <section className="w-full pt-[200px] pb-[250px]  bg-white flex flex-col items-center justify-between">
+      <section className="w-screen pt-[200px] pb-[250px]  bg-white flex flex-col items-center justify-between">
         <Title
           title="2D to 3D"
           color="text-primary"
@@ -68,20 +71,33 @@ function Tech(props) {
           fontWeight="font-regular"
         ></Text>
         <div className="w-[1040px] flex gap-[120px] place-items-center justify-center mt-[150px]">
-          <div className="bg-primary w-[360px] h-[460px] rounded-[30px] text-white text-[40px] flex justify-center items-center">
-            대표님 얼굴 사진
-          </div>
-          <div className="bg-primary w-[560px] h-[880px] rounded-[30px] text-white text-[40px] flex justify-center items-center">
-            얼굴 360도 로테이션
+          <div
+            className="bg-primary w-[360px] h-[460px] rounded-[30px] text-white text-[40px] flex justify-center items-center"
+            style={{
+              backgroundImage: `url(${FACE})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div className="bg-primary w-[480px] h-[740px] rounded-[30px] text-white text-[40px] flex justify-center items-center overflow-hidden">
+            <video
+              controls={false}
+              autoPlay
+              loop
+              muted
+              className="object-cover w-full h-full"
+            >
+              <source src={TURN} type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
-      <section className="w-full pt-[200px] pb-[250px] bg-background flex flex-col items-center justify-between">
+      <section className="w-screen pt-[200px] pb-[250px] bg-background flex flex-col items-center justify-between">
         <Title
           title={
             <span>
               <span className="font-semibold text-[90px]">음성</span>에 따라
-              <span className="font-semibold text-[90px]">실시간</span>으로
+              <span className="font-semibold text-[90px]"> 실시간</span>으로
             </span>
           }
           color="text-primary"
@@ -100,17 +116,30 @@ function Tech(props) {
           fontWeight="font-regular"
           bottom="mb-[200px]"
         ></Title>
-        <div className="flex place-items-center justify-center mt-[150px] relative">
-          <div className="z-20 left-24 top-48 relative">
-            {" "}
-            <img src={Ipad} alt="" />
-          </div>
-          <div className="z-10 right-24 relative">
-            <img src={Imac} alt="" />
+        <div className=" w-fit h-fit flex place-items-center justify-center">
+          <div
+            className="z-20 left-24 relative w-[506px] h-[350px]"
+            style={{
+              backgroundImage: `url(${Ipad})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            className="z-10 right-24 relative w-[845px] h-[712px]"
+            style={{
+              backgroundImage: `url(${Imac})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <video controls={false} autoPlay loop muted className="">
+              <source src={TALKING} type="video/mp4" />
+            </video>
           </div>
         </div>
         <div className="w-[1040px] flex items-center justify-center gap-[130px] mt-[250px]">
-          <div className="flex flex-col items-center gap-[90px] W-fit">
+          <div className="flex flex-col items-center gap-[90px] w-fit">
             <div className="w-[320px] h-[320px] rounded-full bg-primary text-[58px] flex items-center justify-center text-white">
               기존서비스
             </div>
@@ -127,14 +156,14 @@ function Tech(props) {
             <div className="w-[320px] h-[320px] rounded-full bg-secondary text-[64px] flex items-center justify-center text-white">
               field S
             </div>
-            <p className="text-[30px] font-medium text-center">
+            <div className="text-[30px] font-medium text-center">
               <div>인공지능(AI)를 활용</div>
               <div className="w-max">
                 <span className="text-secondary">단어</span>와{" "}
                 <span className="text-secondary">감정</span>에 따라{" "}
                 <span className="text-secondary">얼굴 표현 가능</span>
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </section>

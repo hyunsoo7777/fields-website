@@ -7,7 +7,7 @@ function Main() {
   return (
     <div className="w-full pb-[100px] flex justify-center">
       <motion.div
-        className="w-full h-[800px] z-10 absolute"
+        className="w-full h-[850px] z-10 absolute"
         style={{
           backgroundImage: `url(${GIF})`,
           backgroundRepeat: "no-repeat",
@@ -19,7 +19,6 @@ function Main() {
           transition: { duration: 2.4, ease: easeInOut },
         }}
       ></motion.div>
-
       <div className="w-[1040px] pt-[420px] flex flex-col items-start z-20">
         <Title
           title="몰입감 있는 경험"

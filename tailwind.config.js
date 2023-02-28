@@ -51,5 +51,9 @@ module.exports = {
     fontFamily: {
       sans: ["Pretendard"],
     },
+    backdropBrightness: {
+      25: ".25",
+      40: ".40",
+    },
   },
 };

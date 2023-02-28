@@ -46,61 +46,62 @@ function Service(props) {
           <div className="w-[200px] h-[200px] rounded-full bg-primary text-white flex justify-center items-center text-center text-[50px]">
             게임
           </div>
-          <div className="w-[200px] h-[200px] rounded-full bg-primary text-white flex justify-center items-center text-center text-[50px]">
-            시뮬
-            <br />
-            레이션
+          <div className="w-[200px] h-[200px] rounded-full bg-primary text-white flex flex-col justify-center items-center text-center text-[50px] px-[30px]">
+            <div className="relative top-[8px]">시뮬</div>
+            <div className="relative top-[-8px]">레이션</div>
           </div>
           <div className="w-[200px] h-[200px] rounded-full bg-primary text-white flex justify-center items-center text-center text-[50px]">
             대화
           </div>
         </div>
       </div>
-      {/* <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={100}
-        slidesPerView={1.5}
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        centeredSlides={true}
-        autoplay={{ delay: 2000 }}
-        initialSlide={1}
-        loop={true}
-      >
-        <SwiperSlide>
-          <div
-            className="mt-[100px] mb-[300px] w-[900px] h-[500px] rounded-[50px]"
-            style={{
-              backgroundImage: `url(${TECH_img01})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "100%",
-            }}
-          ></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="mt-[100px] mb-[300px] w-[900px] h-[500px] rounded-[50px]"
-            style={{
-              backgroundImage: `url(${TECH_img02})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "100%",
-            }}
-          ></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="mt-[100px] mb-[300px] w-[900px] h-[500px] rounded-[50px]"
-            style={{
-              backgroundImage: `url(${TECH_img03})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "100%",
-            }}
-          ></div>
-        </SwiperSlide>
-      </Swiper> */}
+      <div className="w-full">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={100}
+          slidesPerView={1.5}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          centeredSlides={true}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          initialSlide={3}
+          loop={true}
+        >
+          <SwiperSlide>
+            <div
+              className="mt-[100px] mb-[300px] w-[900px] h-[500px] rounded-[50px]"
+              style={{
+                backgroundImage: `url(${TECH_img01})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "100%",
+              }}
+            ></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="mt-[100px] mb-[300px] w-[900px] h-[500px] rounded-[50px]"
+              style={{
+                backgroundImage: `url(${TECH_img02})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "100%",
+              }}
+            ></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="mt-[100px] mb-[300px] w-[900px] h-[500px] rounded-[50px]"
+              style={{
+                backgroundImage: `url(${TECH_img03})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "100%",
+              }}
+            ></div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 }
