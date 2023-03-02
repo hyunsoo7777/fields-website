@@ -2,7 +2,7 @@ import React, { Suspense, useState } from "react";
 import Profile from "../../assets/profile_1.png";
 import Model from "./Model";
 import { Canvas } from "@react-three/fiber";
-import { Environment, softShadows, useGLTF } from "@react-three/drei";
+import { Environment, useGLTF } from "@react-three/drei";
 
 interface TeamProps {
   grid: string;
