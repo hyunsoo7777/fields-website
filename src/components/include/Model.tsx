@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useGLTF } from "@react-three/drei";
 import { Material } from "three/src/materials/Material";
+import { useSpring, animated, config } from "@react-spring/three";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -16,32 +16,51 @@ type GLTFResult = GLTF & {
     ["default"]: THREE.MeshStandardMaterial;
   };
 };
-export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const group = useRef<THREE.Group>();
-  const [hover, setHover] = useState(false);
-  const myMesh = React.useRef(null);
-  const { nodes, materials } = useGLTF("/lemon.gltf") as GLTFResult;
-  useFrame(({}) => {
-    if (hover) {
-      myMesh.current.rotation.z += 0.1;
-    }
+
+export default function Model(props) {
+  const [angle, setAngle] = useState(0);
+  const { rotation } = useSpring({
+    from: { rotation: [0, 0, 0] },
+    to: { rotation: [0, angle, 0] },
+    config: { duration: 500 },
   });
+
+  const myMesh = useRef<THREE.Group>(null);
+  const group = useRef<THREE.Group>();
+  const { nodes, materials } = useGLTF("/DH.gltf") as GLTFResult;
   return (
-    <group {...props} dispose={null}>
-      <group position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+    <animated.group
+      {...props}
+      dispose={null}
+      ref={myMesh}
+      rotation={rotation}
+      onClick={() => {
+        setAngle(angle + 2 * Math.PI);
+      }}
+    >
+      <group rotation={[-Math.PI / 2, 0, 0]} castShadow receiveShadow>
         <mesh
-          receiveShadow
-          castShadow
-          geometry={nodes.ZBrush_defualt_group.geometry}
-          material={materials.Material__25}
-          scale={0.035}
-          ref={myMesh}
-          onPointerOver={() => setHover(true)}
-          onPointerOut={() => setHover(false)}
+          geometry={nodes.sockes.geometry}
+          material={materials.DH}
+          scale={0.01}
+        ></mesh>
+        <mesh
+          geometry={nodes.base008.geometry}
+          material={materials.DH}
+          scale={0.01}
         ></mesh>
       </group>
-    </group>
+      <group position={[0.32, 0.03, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Sphere004.geometry}
+          material={materials.DH}
+          scale={0.01}
+        ></mesh>
+      </group>
+    </animated.group>
   );
 }
 
-useGLTF.preload("/lemon.gltf");
+useGLTF.preload("/DH.gltf");

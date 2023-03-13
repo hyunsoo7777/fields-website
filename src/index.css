@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
-
 /* 세로 스크롤바 안보이게 하고싶을 시 추가 */
 .scrollbar::-webkit-scrollbar {
   display: none;
@@ -26,4 +25,20 @@
 }
 .swiper .swiper-pagination-bullet-active {
   background-color: #4a3aff;
+}
+@media (max-width: 430px) {
+  .swiper .swiper-pagination {
+    position: absolute;
+    top: 320px !important;
+  }
+  .swiper .swiper-pagination-bullet {
+    background-color: #131432;
+    margin: 15px !important;
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+  }
+  .swiper .swiper-pagination-bullet-active {
+    background-color: #4a3aff;
+  }
 }

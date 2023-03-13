@@ -10,7 +10,7 @@ import Team from "./components/layout/Team";
 import History from "./components/layout/History";
 import Contact from "./components/layout/Contact";
 import Footer from "./components/layout/Footer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   const aboutContainerRef = useRef(null);
