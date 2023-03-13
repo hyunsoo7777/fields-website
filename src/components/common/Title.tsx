@@ -22,8 +22,9 @@ function Title(props: TitleProps) {
   };
   const control = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref);
 
+  // 화면에 나타날때 motion이 작동하기 위해 useInView 추가
+  const isInView = useInView(ref, { once: true });
   useEffect(() => {
     if (isInView) {
       control.start("visible");

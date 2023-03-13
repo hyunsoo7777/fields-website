@@ -1,5 +1,5 @@
 import "./index.css";
-import Wave from "./components/include/Wave";
+import Wave from "./components/common/Wave";
 import Nav from "./components/common/Nav";
 import Main from "./components/layout/Main";
 import About from "./components/layout/About";
@@ -17,8 +17,9 @@ function App() {
   const techContainerRef = useRef(null);
   const serviceContainerRef = useRef(null);
   const teamContainerRef = useRef(null);
+  const contactContainerRef = useRef(null);
   return (
-    <div className="App scrollbar bg-white overflow-x-hidden overflow-y-scroll flex flex-col items-center relative">
+    <div className="App scrollbar bg-white overflow-x-hidden box-border overflow-y-scroll flex flex-col items-center relative">
       <Wave></Wave>
       <Nav
         dark={true}
@@ -26,15 +27,16 @@ function App() {
         techContainerRef={techContainerRef}
         serviceContainerRef={serviceContainerRef}
         teamContainerRef={teamContainerRef}
+        contactContainerRef={contactContainerRef}
       ></Nav>
-      <Main></Main>
+      <Main techContainerRef={techContainerRef}></Main>
       <About aboutContainerRef={aboutContainerRef}></About>
       <Tech techContainerRef={techContainerRef}></Tech>
       <Service serviceContainerRef={serviceContainerRef}></Service>
       <Solution></Solution>
       <Team teamContainerRef={teamContainerRef}></Team>
       <History></History>
-      <Contact></Contact>
+      <Contact contactContainerRef={contactContainerRef}></Contact>
       <Footer></Footer>
     </div>
   );

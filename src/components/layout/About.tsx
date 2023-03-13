@@ -2,16 +2,13 @@ import React from "react";
 import Title from "../common/Title";
 import Text from "../common/Text";
 import { Mobile, PC } from "../../utils/MediaQuery";
-import AboutCont from "../include/AboutCont";
+import AboutCont from "../include/About/AboutCont";
 
 function About(props) {
   return (
-    <>
+    <div ref={props.aboutContainerRef}>
       <PC>
-        <div
-          className="w-screen pt-[200px] pb-[250px] bg-primary flex flex-col justify-between items-center relative z-40"
-          ref={props.aboutContainerRef}
-        >
+        <div className="w-screen pt-[200px] pb-[250px] bg-primary flex flex-col justify-between items-center relative z-40">
           <AboutCont width="1040px">
             <Title
               title="About us"
@@ -33,7 +30,7 @@ function About(props) {
               fontWeight="font-regular"
             ></Text>
           </AboutCont>
-          <AboutCont width="1040px" top="183px">
+          <AboutCont width="1040px" top="120px">
             <Title
               title="Our Mission"
               color="text-white"
@@ -107,7 +104,7 @@ function About(props) {
           </AboutCont>
         </div>
       </Mobile>
-    </>
+    </div>
   );
 }
 

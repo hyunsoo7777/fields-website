@@ -1,15 +1,12 @@
 import Title from "../common/Title";
-import TeamCont from "../include/TeamCont";
+import TeamCont from "../include/Team/TeamCont";
 import { Mobile, PC } from "../../utils/MediaQuery";
 
 function Team(props) {
   return (
-    <div>
+    <div ref={props.teamContainerRef}>
       <PC>
-        <div
-          className="w-screen bg-primary pt-[200px] pb-[250px] flex flex-col items-center text-center z-30"
-          ref={props.teamContainerRef}
-        >
+        <div className="w-screen bg-primary pt-[200px] pb-[250px] flex flex-col items-center text-center z-30">
           <div className="w-[1040px] rounded-b-[100px] flex flex-col items-center">
             <Title
               title="Our team"

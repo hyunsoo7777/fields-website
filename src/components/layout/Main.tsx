@@ -4,7 +4,11 @@ import GIF from "../../assets/main.gif";
 import { easeInOut, motion } from "framer-motion";
 import { Mobile, PC } from "../../utils/MediaQuery";
 
-function Main() {
+interface MainProps {
+  techContainerRef: React.RefObject<HTMLDivElement>;
+}
+
+function Main(props: MainProps) {
   return (
     <div>
       <PC>
@@ -45,6 +49,7 @@ function Main() {
               delay={1}
               duration={0.6}
               initial="hidden"
+              techContainerRef={props.techContainerRef}
             ></Button>
           </div>
         </div>
