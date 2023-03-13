@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../common/Title";
-import HistoryFootprint from "../include/HistoryFootprint";
+import HistoryFootprint from "../include/History/HistoryFootprint";
 import { Mobile, PC } from "../../utils/MediaQuery";
 
 function History() {

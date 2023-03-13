@@ -36,7 +36,14 @@ function Footer() {
             </div>
             <div className="w-full mt-[40px] font-light text-[18px] flex justify-between items-end">
               <div>© field S. All Rights Reserved.</div>
-              <img src={Up} alt="" />
+              <img
+                src={Up}
+                alt=""
+                className="cursor-pointer"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              />
             </div>
           </div>
         </div>
@@ -69,7 +76,13 @@ function Footer() {
             <div className="w-full mt-[40px] font-light text-[18px] flex justify-between items-end"></div>
             <div className="flex justify-between items-end">
               <img src={Social} alt="" />
-              <img src={Up} alt="" />
+              <img
+                src={Up}
+                alt=""
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              />
             </div>
           </div>
         </div>

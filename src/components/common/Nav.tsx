@@ -12,6 +12,7 @@ interface NavProps {
   techContainerRef: React.RefObject<HTMLDivElement>;
   serviceContainerRef: React.RefObject<HTMLDivElement>;
   teamContainerRef: React.RefObject<HTMLDivElement>;
+  contactContainerRef: React.RefObject<HTMLDivElement>;
 }
 
 function Nav_dark(props: NavProps) {
@@ -74,12 +75,27 @@ function Nav_dark(props: NavProps) {
             </div>
           </div>
           <div className="flex justify-end">
-            <Button size="sm" title="문의하기" initial="false"></Button>
+            <Button
+              size="sm"
+              title="문의하기"
+              initial="false"
+              contactContainerRef={props.contactContainerRef}
+            ></Button>
           </div>
         </div>
       </PC>
       <Mobile>
-        {menu ? null : <Modal memu={menu} setMenu={setMenu}></Modal>}
+        {menu ? null : (
+          <Modal
+            menu={menu}
+            setMenu={setMenu}
+            aboutContainerRef={props.aboutContainerRef}
+            techContainerRef={props.techContainerRef}
+            serviceContainerRef={props.serviceContainerRef}
+            teamContainerRef={props.teamContainerRef}
+            contactContainerRef={props.contactContainerRef}
+          ></Modal>
+        )}
         <div className="w-screen h-[50px] px-[20px] flex justify-between items-center">
           <a href="/">
             <img src={props.dark ? Logo : Logo_white} alt="" width="90px" />

@@ -1,14 +1,13 @@
 import React from "react";
 import Location from "../../assets/location.png";
-import ContactInput from "../include/ContactInput";
+import ContactInput from "../include/Contact/ContactInput";
 import { Mobile, PC } from "../../utils/MediaQuery";
-import ContactMap from "../include/ContactMap";
+import ContactMap from "../include/Contact/ContactMap";
 
-function Contact() {
+function Contact(props) {
   return (
-    <div>
+    <div ref={props.contactContainerRef}>
       <PC>
-        {" "}
         <div className="pt-[200px] pb-[200px] w-full flex flex-col items-center">
           <div className="mb-[150px] font-semibold text-[50px]">
             저희와 이야기 하고 싶으신가요?

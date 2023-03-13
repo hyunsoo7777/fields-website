@@ -4,17 +4,14 @@ import Text from "../../components/common/Text";
 import Knock from "../../assets/knock.svg";
 import { Mobile, PC } from "../../utils/MediaQuery";
 
-import ServiceCont from "../include/ServiceCont";
-import ServiceSlider from "../include/ServiceSlider";
+import ServiceCont from "../include/Service/ServiceCont";
+import ServiceSlider from "../include/Service/ServiceSlider";
 
 function Service(props) {
   return (
-    <div>
+    <div ref={props.serviceContainerRef}>
       <PC>
-        <div
-          className="w-full pt-[200px] pb-[250px] rounded-b-[100px] bg-white flex flex-col items-center"
-          ref={props.serviceContainerRef}
-        >
+        <div className="w-full pt-[200px] pb-[250px] rounded-b-[100px] bg-white flex flex-col items-center">
           <Title
             title="Our service"
             color="text-primary"

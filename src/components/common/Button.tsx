@@ -8,10 +8,13 @@ interface ButtonProps {
   delay?: number;
   duration?: number;
   initial: string;
+  techContainerRef?: React.RefObject<HTMLDivElement>;
+  contactContainerRef?: React.RefObject<HTMLDivElement>;
 }
 interface ButtonSizeProps {
   [key: string]: string;
 }
+
 function Button(props: ButtonProps) {
   const ButtonSize: ButtonSizeProps = {
     mobile_sm:
@@ -48,6 +51,19 @@ function Button(props: ButtonProps) {
       variants={ButtonVariant}
       initial={props.initial}
       animate={control}
+      onClick={() => {
+        if (props.size == "sm" || props.size == "mobile_sm") {
+          window.scrollTo({
+            top: props.contactContainerRef.current.offsetTop,
+            behavior: "smooth",
+          });
+        } else {
+          window.scrollTo({
+            top: props.techContainerRef.current.offsetTop,
+            behavior: "smooth",
+          });
+        }
+      }}
     >
       {props.title}
     </motion.div>
