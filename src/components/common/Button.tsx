@@ -14,6 +14,10 @@ interface ButtonSizeProps {
 }
 function Button(props: ButtonProps) {
   const ButtonSize: ButtonSizeProps = {
+    mobile_sm:
+      "w-[100px] py-[5px] text-[16px] bg-secondary text-white text-center font-semibold rounded-[50px] cursor-pointer hover:bg-hover hover:text-primary transition-all duration-300 ease-out",
+    mobile_lg:
+      "w-[180px] py-[10.5px] text-[18px] bg-secondary text-white text-center font-semibold rounded-[37.5px] cursor-pointer hover:bg-hover hover:text-primary transition-all duration-300 ease-out",
     sm: "w-[140px] py-[9px] px-[21px] text-[18px] bg-secondary text-white text-center font-semibold rounded-[50px] cursor-pointer hover:bg-hover hover:text-primary transition-all duration-300 ease-out",
     lg: "px-[62px] py-[14px] text-[25px] mt-[30px] font-semibold bg-secondary text-white text-center rounded-[50px] cursor-pointer hover:bg-hover hover:text-primary transition-all duration-300 ease-out",
   };

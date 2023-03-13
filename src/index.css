@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
-
 /* 세로 스크롤바 안보이게 하고싶을 시 추가 */
 .scrollbar::-webkit-scrollbar {
   display: none;
@@ -15,15 +14,31 @@
 /* Swiper - pagination 기본 색깔이 파란색이고 아주 몬생겨서 바꿔줘야됨 */
 .swiper .swiper-pagination {
   position: absolute;
-  top: 670px !important;
+  top: 680px !important;
 }
 .swiper .swiper-pagination-bullet {
-  background-color: #cbc9d7;
+  background-color: #131432;
   margin: 0 25px !important;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   opacity: 1;
 }
 .swiper .swiper-pagination-bullet-active {
-  background-color: #131432;
+  background-color: #4a3aff;
+}
+@media (max-width: 430px) {
+  .swiper .swiper-pagination {
+    position: absolute;
+    top: 320px !important;
+  }
+  .swiper .swiper-pagination-bullet {
+    background-color: #131432;
+    margin: 15px !important;
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+  }
+  .swiper .swiper-pagination-bullet-active {
+    background-color: #4a3aff;
+  }
 }

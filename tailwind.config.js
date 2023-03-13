@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        imac: "url('./src/assets/imac.png)",
+      },
+    },
     colors: {
       primary: "#131432",
       secondary: "#4A3AFF",
@@ -50,6 +54,13 @@ module.exports = {
     },
     fontFamily: {
       sans: ["Pretendard"],
+    },
+    backdropBrightness: {
+      25: ".25",
+      40: ".40",
+    },
+    spacing: {
+      custom: "183px",
     },
   },
 };
